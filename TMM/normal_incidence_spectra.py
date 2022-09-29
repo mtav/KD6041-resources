@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import tmm
+
+# Import the main TMM functions we will use:
+from tmm.tmm_core import coh_tmm, unpolarized_RT
+
+# import numpy
 import numpy as np
+
+# import matplotlib for plotting
 import matplotlib.pyplot as plt
-from numpy import pi, linspace, inf, array
-from tmm.tmm_core import (coh_tmm, unpolarized_RT, ellips,
-                       position_resolved, find_in_structure_with_inf)
 
 def main():
     """
@@ -14,11 +17,11 @@ def main():
     different incident angles.
     """
     # list of layer thicknesses in nm
-    d_list = [inf, 100, 300, inf]
+    d_list = [np.inf, 100, 300, np.inf]
     # list of refractive indices
     n_list = [1, 2.2, 3.3+0.3j, 1]
     # list of wavenumbers to plot in nm^-1
-    ks = linspace(0.0001, .01, num=400)
+    ks = np.linspace(0.0001, .01, num=400)
     # initialize lists of y-values to plot
     Rnorm = []
     R45 = []
