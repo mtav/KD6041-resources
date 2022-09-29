@@ -13,7 +13,6 @@ import matplotlib.pyplot as plt
 def main():
     ##### YOUR CODE GOES HERE #####
     print('Hello world!')
-    coh_tmm('s', n_list, d_list, 0, 1/k)['R']
 
 if __name__ == "__main__":
     main()
