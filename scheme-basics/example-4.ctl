@@ -1,0 +1,7 @@
+(define-param x 42)
+(print "x = 2: ") (if (= x 2) (print "TRUE\n") (print "FALSE\n") )
+(print "x < 2: ") (if (< x 2) (print "TRUE\n") (print "FALSE\n") )
+(print "x <= 2: ") (if (<= x 2) (print "TRUE\n") (print "FALSE\n") )
+(print "x > 2: ") (if (> x 2) (print "TRUE\n") (print "FALSE\n") )
+(print "x >= 2: ") (if (>= x 2) (print "TRUE\n") (print "FALSE\n") )
+(exit)
