@@ -1,3 +1,4 @@
+% optional: clean up before running script
 close all;
 clear all;
 
@@ -18,12 +19,13 @@ figure;
 % plot the TMM data
 subplot(1,2,1); hold on;
 title('TMM');
-plot(R, a./wvl_list, 'DisplayName', 'no defect');
+plot(R, a./wvl_list);
 ylabel('a/\lambda (no unit)');
 xlabel('Reflectance R (no unit)');
-hline(gap_infos.fullgaps.bottom, 'r--');
-hline(gap_infos.fullgaps.top, 'b--');
 ylim(y_limits);
+% highlight edges of the bandgap
+yline(gap_infos.fullgaps.bottom, 'r--');
+yline(gap_infos.fullgaps.top, 'b--');
 
 % plot the MPB data
 subplot(1,2,2); hold on;
@@ -31,11 +33,12 @@ title('PWE');
 plot(MPB_data.k1, MPB_data.fn(:,1), 'r-');
 plot(MPB_data.k1, MPB_data.fn(:,2), 'g-');
 plot(MPB_data.k1, MPB_data.fn(:,3), 'b-');
-xlabel('kx/(2\pi/a)');
-ylabel('a/\lambda');
+xlabel('k_x/(2\pi/a)');
+ylabel('a/\lambda (no unit)');
 ylim(y_limits);
-hline(gap_infos.fullgaps.bottom, 'r--');
-hline(gap_infos.fullgaps.top, 'b--');
+% highlight edges of the bandgap
+yline(gap_infos.fullgaps.bottom, 'r--');
+yline(gap_infos.fullgaps.top, 'b--');
 
 % save the figure
 saveas(gcf, 'DBR_TMM_vs_PWE.svg');
