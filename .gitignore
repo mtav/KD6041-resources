@@ -3,3 +3,6 @@
 *.bak
 #*.pptx
 *.h5
+*.dat
+*.out
+*.svg
