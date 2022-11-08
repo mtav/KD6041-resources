@@ -1,6 +1,7 @@
 ;;;;; Define new parameters.
-(define-param n1 1)
-(define-param n2 3.2)
+(define-param n1 1) ; =sqrt(eps1)
+(define-param n2 3.2) ; =sqrt(eps2)
+(define-param a 1) ; lattice constant
 
 ;;;;; Set parameters.
 (set-param! resolution 64) ;; Set resolution.
@@ -9,6 +10,7 @@
 ;;;;; Define the geometry lattice.
 (set! geometry-lattice
   (make lattice
+    (basis-size a a a) ; length of the lattice vectors
     (size 1 no-size no-size)
   )
 )
@@ -18,12 +20,12 @@
   (make block
     (center -0.25 0 0)
     (material (make dielectric (index n1)))
-    (size 0.5 infinity infinity)
+    (size (* 0.5 a) infinity infinity)
   )
   (make block
     (center 0.25 0 0)
     (material (make dielectric (index n2)))
-    (size 0.5 infinity infinity)
+    (size (* 0.5 a) infinity infinity)
   )
 ))
 

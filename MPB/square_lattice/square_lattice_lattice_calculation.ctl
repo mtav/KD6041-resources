@@ -2,8 +2,6 @@
 (define-param a12 1)
 (define-param a3 1)
 
-;;;;; Set parameters.
-
 ;;;;; Define the geometry lattice.
 (set! geometry-lattice
   (make lattice
@@ -14,10 +12,6 @@
     (size 1 1 1) ; number of unit-cells along each lattice vector
   )
 )
-
-;;;;; Define the geometry.
-
-;;;;; Define the desired k-points.
 
 ;;;;; Run the simulation.
 (run-tm)
