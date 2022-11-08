@@ -35,8 +35,6 @@
                      (vector3 0.5 0 0)   ; X     -> k_index = 1 + 4 + 1= 6
                      (vector3 0.5 0.5 0) ; M     -> k_index = 6 + 4 + 1=11
                      (vector3 0 0 0)))   ; Gamma -> k_index = 11+ 4 + 1=16
-; Add 4 points between consecutive initial k-points.
-(set! k-points (interpolate 4 k-points))
 
 ;;;;; Run the simulation.
 (run-tm); run in TM mode
