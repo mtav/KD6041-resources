@@ -13,5 +13,21 @@
   )
 )
 
+;;;;; The geometry
+; (set! geometry
+  ; (list (make cylinder 
+               ; (center 0 0 0)
+               ; (radius 0.2)
+               ; (height infinity)
+               ; (material (make dielectric (epsilon 8.9)))
+  ; ))
+; )
+
+;;;;; Define the desired k-points.
+(set! k-points (list (vector3 0 0 0)     ; Gamma -> k_index = 1
+                     (vector3 0.5 0 0)   ; X     -> k_index = 1 + 4 + 1= 6
+                     (vector3 0.5 0.5 0) ; M     -> k_index = 6 + 4 + 1=11
+                     (vector3 0 0 0)))   ; Gamma -> k_index = 11+ 4 + 1=16
+
 ;;;;; Run the simulation.
 (run-tm)
