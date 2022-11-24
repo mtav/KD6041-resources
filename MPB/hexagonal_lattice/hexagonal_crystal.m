@@ -32,7 +32,7 @@ plot([te.kindex(1), te.kindex(end)], [mean(gap_edges_fn), mean(gap_edges_fn)], '
 plot([te.kindex(1), te.kindex(end)], [gap_edges_fn(2), gap_edges_fn(2)], 'k--');
 xticks(1:5:16);
 xticklabels({'\Gamma','M','K','\Gamma'});
-vline(1:5:16);
+xline(1:5:16);
 
 % plot against wavelength
 subplot(1,2,2);
@@ -46,4 +46,4 @@ plot([te.kindex(1), te.kindex(end)], [mean(gap_edges_lambda), mean(gap_edges_lam
 plot([te.kindex(1), te.kindex(end)], [gap_edges_lambda(2), gap_edges_lambda(2)], 'k--');
 xticks(1:5:16);
 xticklabels({'\Gamma','M','K','\Gamma'});
-vline(1:5:16);
+xline(1:5:16);
