@@ -7,6 +7,9 @@ load('TMM_data.mat');
 % load the MPB data
 MPB_data = MPB_load_data('example_DBR_final.dat');
 
+% converting to double in case a is an integer:
+a = double(a);
+
 % get the gap infos
 gap_infos = MPB_getGaps(MPB_data);
 
